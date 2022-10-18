@@ -106,3 +106,14 @@ if __name__ == '__main__':
     # spray cone angle
     beta = calc_spray_cone_angle(Do, Ds, We, Rep)   # [rad]
     beta = beta*180.0/pi
+
+    # specific heat capacity
+    cp_l = PropsSI('C', 'P', Patm, 'T', Tamb, 'water')
+
+    # latent heat
+    H_l = PropsSI('H', 'P', Patm, 'Q', 0, 'water')
+    H_v = PropsSI('H', 'P', Patm, 'Q', 1, 'water')
+    latent_heat = H_v - H_l
+
+    # saturation temperature
+    Tsat = PropsSI('T', 'P', Patm, 'Q', 0, 'water')
