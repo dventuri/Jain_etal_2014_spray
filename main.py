@@ -61,15 +61,16 @@ if __name__ == '__main__':
     dP = 6          # [bar]
     dP = dP*1e5     # convert [bar] -> [Pa]
     Patm = 101325   # [Pa]
+    Tamb = 298.15   # [K]
 
-    # liquid density (water @ 298.15 K, Patm)
-    rho_l = PropsSI('D', 'T', 298.15, 'P', Patm, 'water')   # [kg/m³]
+    # liquid density (water @ Tamb, Patm)
+    rho_l = PropsSI('D', 'T', Tamb, 'P', Patm, 'water')   # [kg/m³]
 
-    # liquid viscosity (water @ 298.15 K, Patm)
-    mu_l = PropsSI('V', 'T', 298.15, 'P', Patm, 'water')    # [Pa s]
+    # liquid viscosity (water @ Tamb, Patm)
+    mu_l = PropsSI('V', 'T', Tamb, 'P', Patm, 'water')    # [Pa s]
 
-    # liquid-gas surface tension (water-air @ 298.15 K, dP+Patm)
-    # sigma = PropsSI('I', 'T', 298.15, 'P', Patm, 'water')
+    # liquid-gas surface tension (water-air @ Tamb, dP+Patm)
+    # sigma = PropsSI('I', 'T', Tamb, 'P', Patm, 'water')
     sigma = 71.97       # [dynes/cm]
     sigma = sigma/1000  # convert [dynes/cm] -> [N/m]
 
