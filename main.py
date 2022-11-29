@@ -117,3 +117,7 @@ if __name__ == '__main__':
 
     # saturation temperature
     Tsat = PropsSI('T', 'P', Patm, 'Q', 0, 'water')
+
+    # for AIR:
+    rho_air = PropsSI('D', 'T', Tamb, 'P', Patm, 'air')
+    mu_air = PropsSI('V', 'T', Tamb, 'P', Patm, 'air')
